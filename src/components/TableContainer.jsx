@@ -1,7 +1,7 @@
 import React from 'react';
 import Timer from './Timer.jsx';
 
-const events = [
+const baseEvents = [
     {
         name:'a',
         time:'Jul 8, 2025'
@@ -15,21 +15,58 @@ const events = [
         time:'May 3, 2021'
     },
 ];
+const today = new Date();
+var id;
 
 export default class TableContainer extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            events: baseEvents.map(value=>(
+                {
+                    name: value.name,
+                    time: Date.parse(value.time)-today.getTime()
+                }
+            ))
+        }
+    }
+
+    componentDidMount(){
+        this.interval = setInterval(() => {
+            let today = new Date();
+            this.setState({
+                events: baseEvents.map(value=>(
+                    {
+                        name: value.name,
+                        time: Date.parse(value.time)-today.getTime()
+                    }
+                ))
+            })
+        }, 500)
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.interval);
     }
 
     render(){
         return(
-            <table>
-                {
-                    events.map((value,index)=>(
-                        <Timer key={index} timerEvent={value}></Timer>
-                    ))
-                }
-            </table>
+            <div>
+                <table style={{border:1}}>
+                    <tbody>
+                        {
+                            this.state.events.map((value,index)=>(
+                                <tr key={index}>
+                                    <th>{value.name}</th>
+                                    <td>
+                                        <Timer timerSpan={value.time}></Timer>
+                                    </td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
         )
     }
 }
