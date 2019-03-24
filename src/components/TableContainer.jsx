@@ -4,11 +4,11 @@ import Timer from './Timer.jsx';
 const baseEvents = [
     {
         name:'a',
-        time:'Jul 8, 2025'
+        time:'Jul 8, 2322'
     },
     {
         name:'b',
-        time:'Jul 6, 2025'
+        time:'Jul 6, 250000'
     },
     {
         name:'c',
@@ -16,7 +16,6 @@ const baseEvents = [
     },
 ];
 const today = new Date();
-var id;
 
 export default class TableContainer extends React.Component{
     constructor(props){
