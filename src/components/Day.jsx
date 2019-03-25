@@ -39,7 +39,7 @@ export default class Day extends React.Component{
                         </div>
                     )
                 })}
-                <span>Days</span>
+                <span className='suffix'>Days</span>
             </div>
         )
     }

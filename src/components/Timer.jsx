@@ -8,6 +8,7 @@ import Second from './Secound.jsx';
 const myStyle = {
     display: 'inline-block',
     margin: 5,
+    float: 'left',
 }
 
 export default class Timer extends React.Component{
@@ -52,7 +53,7 @@ export default class Timer extends React.Component{
 
     render(){
         return(
-            <div id="timer" style={{height: 100}}>
+            <div id="timer" style={{textAlign:'center'}}>
                 <div style={myStyle}>
                     <Year time={this.state.years.toString().split('').map(value=>{
                         return parseInt(value);

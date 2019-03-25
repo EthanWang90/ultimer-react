@@ -37,7 +37,7 @@ export default class Second extends React.Component{
                         </div>
                     )
                 })}
-                <span>Seconds</span>
+                <span className='suffix'>Seconds</span>
             </div>
         )
     }

@@ -23,6 +23,27 @@
   color: #61dafb;
 }
 
+#singleBlock {
+  display:inline-block;
+  width:18px;
+  height:22px;
+  border-radius: 1px;;
+  font-family:'Orbitron', sans-serif;
+}
+
+.turnPaper {
+  animation: turnPaper-spin 200ms linear; 
+}
+
+.reversePaper {
+  animation: reversePaper-spin 200ms linear;
+}
+
+.suffix {
+  font-family: 'Anton', sans-serif;
+  font-size: 80%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -30,4 +51,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes turnPaper-spin {
+  0%   {transform: scale(1,1);}
+  25%  {transform: scale(1,0.5);}
+  50%  {transform: scale(1,0);}
+  60%  {transform: scale(1,0.5);}
+  70%  {transform: scale(1,1);}
+  85%  {transform: scale(1,0.7);}
+  100% {transform: scale(1,1);}
+}
+
+@keyframes reversePaper-spin {
+  0%   {transform: scale(1,1);}
+  25%  {transform: scale(1,0.5);}
+  50%  {transform: scale(1,0);}
+  60%  {transform: scale(1,0.5);}
+  70%  {transform: scale(1,1);}
+  85%  {transform: scale(1,0.7);}
+  100% {transform: scale(1,1);}
 }

@@ -37,7 +37,7 @@ export default class Minute extends React.Component{
                         </div>
                     )
                 })}
-                <span>Minutes</span>
+                <span className='suffix'>Minutes</span>
             </div>
         )
     }

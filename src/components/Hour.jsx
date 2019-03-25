@@ -37,7 +37,7 @@ export default class Hour extends React.Component{
                         </div>
                     )
                 })}
-                <span>Hours</span>
+                <span className='suffix'>Hours</span>
             </div>
         )
     }

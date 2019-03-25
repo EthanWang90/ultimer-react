@@ -12,7 +12,7 @@ export default class Year extends React.Component{
                         </div>
                     )
                 })}
-                <span>Years</span>
+                <span className='suffix'>Years</span>
             </div>
         )
     }
