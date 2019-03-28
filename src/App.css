@@ -29,6 +29,18 @@
   height:22px;
   border-radius: 1px;;
   font-family:'Orbitron', sans-serif;
+  vertical-align: middle;
+}
+
+#singleBlock div {
+  background-image: url('../src/img/012.jpg');
+  display:inline-block;
+  width:18px;
+  height:22px;
+  border-radius: 1px;;
+  font-family:'Orbitron', sans-serif;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .turnPaper {
@@ -40,8 +52,13 @@
 }
 
 .suffix {
+  vertical-align: middle;
   font-family: 'Anton', sans-serif;
   font-size: 80%;
+}
+
+.eventInfo {
+  font-family: 'Press Start 2P', cursive;
 }
 
 @keyframes App-logo-spin {

@@ -29,6 +29,7 @@ export default class Block extends React.Component{
                     <div>
                         {this.props.timeValue}
                     </div>
+                        
                 </Paper>
             </div>
         )

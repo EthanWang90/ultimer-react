@@ -3,20 +3,21 @@ import Timer from './Timer.jsx';
 import Grid from '@material-ui/core/Grid';
 import Info from './Info.jsx';
 
+
 const baseEvents = [
     {
         name:'2020 new year',
         time:'1/1/2020 00:00:00',
         doom: false
     },
-    {
-        name:'Venice is no longer livable',
-        time:'1/1/2028 5:53:24',
-        doom: false
-    },
+    // {
+    //     name:'Venice is no longer livable',
+    //     time:'1/1/2028 5:53:24',
+    //     doom: false
+    // },
     {
         name:'Time remaining for Ethan',
-        time:'2/28/2022 0:0:0',
+        time:'2/28/2022 23:59:10',
         doom: false
     },
     {
@@ -34,7 +35,8 @@ export default class TableContainer extends React.Component{
             events: baseEvents.map(value=>(
                 {
                     name: value.name,
-                    time: Date.parse(value.time)-today.getTime()
+                    time: Date.parse(value.time)-today.getTime(),
+                    doom: value.doom,
                 }
             ))
         }
@@ -47,7 +49,8 @@ export default class TableContainer extends React.Component{
                 events: baseEvents.map(value=>(
                     {
                         name: value.name,
-                        time: Date.parse(value.time)-today.getTime()
+                        time: Date.parse(value.time)-today.getTime(),
+                        doom: value.doom,
                     }
                 ))
             })
@@ -60,14 +63,15 @@ export default class TableContainer extends React.Component{
 
     render(){
         return(
-            <ul style={{listStyle:'none', position: 'relative', top: 100}}>
+            <ul style={{listStyle:'none', position: 'relative', top: 50}}>
                 {
                     this.state.events.map((value,index)=>(
                         <li key={index} style={{height:200}}>
                             <Grid container spacing={24}>
-                                <Grid item sm={3} xs={12}>
-                                    <Info timerInfo={value.name}></Info>                              
+                                <Grid item sm={3} xs={12} className='eventInfo'>
+                                    <Info timerInfo={value.name} iconInfo={value.doom}></Info>                        
                                 </Grid>
+
                                 <Grid item sm={9} xs={12}>
                                     <Timer timerSpan={value.time}></Timer>
                                 </Grid>
